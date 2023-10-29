@@ -47,7 +47,6 @@ class VolunteerRepositoryTest {
     }
     @Test
     public void findAllByVolunteerNameContaining_str_volunteerList() {
-        //
         List<Volunteer> volunteerList = volunteerRepository.findByVolunteerNameContaining("Doe");
         // Ensure that the list
         assertEquals(1,volunteerList.size());
