@@ -202,7 +202,7 @@ server.error.include-binding-errors=always
  
 ## 6. Extra Links
 
-presentation..
+presentation: https://www.canva.com/design/DAFymWLu80U/CCapXfAX4mRdXvgOxHlUMg/edit?utm_content=DAFymWLu80U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## 7. Future Work
 
