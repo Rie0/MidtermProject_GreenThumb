@@ -1,4 +1,5 @@
 package com.GreenThumb.Mid.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
@@ -10,12 +11,14 @@ public class Project {
 //    Variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer projectId;
     @NotEmpty(message = "You must enter the project name")
     private String projectName;
     @Enumerated(EnumType.STRING)
     private ProjectType projectType;
     @OneToMany(mappedBy = "project")
+    @JsonIgnore //prevent stackoverflow
     private List<Volunteer> volunteers;
 
 //              Constructors
@@ -54,7 +57,7 @@ public class Project {
     }
 
 //             Methods
-    public static Project createProject(String name, ProjectType type) {
+    public static Project createProject(String name, ProjectType type) {//remove??
         Project project = new Project();
         project.setProjectName(name);
         project.setProjectType(type);

@@ -42,6 +42,8 @@ public class ProjectController implements IProjectController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateProjectName(@RequestBody @Valid ProjectNameDTO projectNameDTO,@PathVariable Integer projectID){
         projectService.updateProjectName(projectNameDTO.getProjectName(), projectID);
+
+
     }
 //  **************************************************  DELETE  ********************************************************
     @DeleteMapping("/projects/{projectID}")//Delete a project

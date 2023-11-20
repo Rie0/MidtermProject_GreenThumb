@@ -52,7 +52,7 @@ public class Volunteer {
     }
 
 //    Methods
-    public void addProject(Project project) {
+    public void addProject(Project project) {//remove?
     // Set the volunteer's project to the specified project
     this.project = project;
     // Add the volunteer to the project's list of volunteers

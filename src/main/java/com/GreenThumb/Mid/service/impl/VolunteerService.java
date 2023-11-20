@@ -1,6 +1,8 @@
 package com.GreenThumb.Mid.service.impl;
 
+import com.GreenThumb.Mid.model.Project;
 import com.GreenThumb.Mid.model.Volunteer;
+import com.GreenThumb.Mid.repository.ProjectRepository;
 import com.GreenThumb.Mid.repository.VolunteerRepository;
 import com.GreenThumb.Mid.service.interfaces.IVolunteerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class VolunteerService implements IVolunteerService {
     @Autowired
     VolunteerRepository volunteerRepository;
 
+    @Autowired
+    ProjectRepository projectRepository;
+
 //  ***************************************************  GET  ****************************************************
     @Override //Get Volunteers by ID
     public Volunteer getVolunteerByID(@PathVariable Integer volunteerID){
@@ -32,7 +37,29 @@ public class VolunteerService implements IVolunteerService {
         if(matchingVolunteers.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                 "No volunteers with String: "+ str +"."); //Check if the volunteers exists, send a message if not.
         return matchingVolunteers;
-    }//  ***************************************************  PUT  ****************************************************
+
+
+    }
+    // ******************************************** post ********************************************
+    public void assignVolunteerToProject(Integer volunteerId, Integer projectId) {
+        Volunteer volunteer = volunteerRepository.findById(volunteerId).orElse(null);
+        Project project = projectRepository.findById(projectId).orElse(null);
+
+        if (volunteer != null && project != null) { // Check if both volunteer and project are found
+            // Assign the volunteer to the project
+            volunteer.setProject(project);
+            project.getVolunteers().add(volunteer);
+
+            volunteerRepository.save(volunteer);
+            projectRepository.save(project);
+
+        } else {
+            // add log message or take appropriate action, maybe add something if the more than one project is added.
+            System.err.println("Volunteer or project not found.");
+        }
+    }
+
+    //  ***************************************************  PUT  ****************************************************
     @Override //Update a volunteer by ID
     public void updateVolunteer(Volunteer volunteer, Integer volunteerID) {
         Optional<Volunteer> volunteerOptional = volunteerRepository.findById(volunteerID);

@@ -39,6 +39,12 @@ public class VolunteerController implements IVolunteerController {
     public void saveVolunteer(@RequestBody @Valid Volunteer volunteer){
         volunteerRepository.save(volunteer);
     }
+
+    @PostMapping("/volunteers/{volunteerId}/assign/{projectId}")//assign a volunteer to a project.
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void assignVolunteerToProject(@PathVariable Integer volunteerId, @PathVariable Integer projectId) {
+        volunteerService.assignVolunteerToProject(volunteerId, projectId);
+    }
 //  ****************************************************  PUT  *********************************************************
     @PutMapping("/volunteers/{volunteerID}")//Update a Volunteer
     @ResponseStatus(HttpStatus.NO_CONTENT)
