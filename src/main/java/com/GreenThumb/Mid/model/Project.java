@@ -17,7 +17,7 @@ public class Project {
     private String projectName;
     @Enumerated(EnumType.STRING)
     private ProjectType projectType;
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     @JsonIgnore //prevent stackoverflow
     private List<Volunteer> volunteers;
 
@@ -57,7 +57,7 @@ public class Project {
     }
 
 //             Methods
-    public static Project createProject(String name, ProjectType type) {//remove??
+    public static Project createProject(String name, ProjectType type) {
         Project project = new Project();
         project.setProjectName(name);
         project.setProjectType(type);
