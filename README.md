@@ -161,6 +161,21 @@ server.error.include-binding-errors=always
 | :-------- | :------- | :-------------------------------- |
 | `volunteer` | `json`   | **Required**. The volunteer data to be added. |
 
+
+### Assign a Volunteer to a Project
+
+```http
+  @PostMapping("/volunteers/{volunteerId}/assign/{projectId}")
+```
+
+- **Description:** Assign a volunteer to a specific project.
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `volunteerId` | `integer`   | **Required**. ID of the volunteer to be assigned. |
+| `projectId` | `integer` | **Required**. ID of the project to assign the volunteer to. |
+
+
 ### Update a volunteer
 
 ```http
