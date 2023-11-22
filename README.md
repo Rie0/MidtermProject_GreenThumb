@@ -1,5 +1,7 @@
 # GreenThumb Foundation
 
+[Frontend part](https://github.com/Rie0/Final-Project-greenThumb)
+
 ## 1. ProjectDescription
 
 GreenThumb is my midterm project, and it is designed as a non-profit organization with a mission to protect the environment. This project has been a concept in my mind ever since I was tasked with creating a website for one of my college projects.
