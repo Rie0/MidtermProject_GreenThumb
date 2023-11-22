@@ -230,4 +230,4 @@ In the future I'll be working in the frontend development of this project during
 - https://online.visual-paradigm.com/ tools to create the daiagram
 - https://www.baeldung.com/ for needed Spring boot documinations
 - https://docs.spring.io/ for  needed Spring boot documinations
-- https://www.canva.com/ for crating the presentation
+- https://www.canva.com/ for creating the presentation
