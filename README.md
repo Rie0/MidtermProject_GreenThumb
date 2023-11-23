@@ -12,6 +12,8 @@ The program encompasses two main entities:
 
 **Volunteer:** Encompasses individuals who volunteer for specific projects. The program includes their contact information.
 
+**The project includes uncomplete security feature. it can be accessed through the 'Server-Authentication' branch.**
+
 ## 2. Class Diagram
 
 - Each project is associated with a project type, maintains a list of volunteers, and possesses a method to create new projects.
@@ -19,9 +21,6 @@ The program encompasses two main entities:
 - Multiple volunteers can work on a single project, and each volunteer maintains contact information. The Volunteer class has a method to add a project to a volunteer.
 
 ![Class Diagram](UMLClassDiagram/GreenThumbClassDiagram.jpg)
-
-**The project includes uncomplete security feature. it can be accessed through the 'Server-Authentication' branch.**
-
 
 ## 3. Setup
 
