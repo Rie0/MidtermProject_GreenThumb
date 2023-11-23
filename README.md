@@ -20,6 +20,8 @@ The program encompasses two main entities:
 
 ![Class Diagram](UMLClassDiagram/GreenThumbClassDiagram.jpg)
 
+**The project includes uncomplete security feature. it can be accessed through the 'Server-Authentication' branch.**
+
 
 ## 3. Setup
 
